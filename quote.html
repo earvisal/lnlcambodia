@@ -102,7 +102,7 @@
           <span class="phone"><i class="fas fa-phone-alt"></i> +(855) 23 868 885 / 23 868 886</span>
 
           <a href="quote.html" class="request-quote" aria-label="Request a Quote">
-            <i class="fas fa-quote-right"></i> Request A Quote
+            <i class="fas fa-quote-right"></i> Track Your Shipment
           </a>
           <!-- <button id="darkModeToggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button> -->
           <div class="hamburger" id="hamburger" aria-label="Toggle Mobile Menu">
@@ -184,114 +184,54 @@
 
 <section class="hero-contact">
   <div class="hero-contact-content">
-    <h1>Request A Quote</h1>
-    <p>Get a fast and accurate quote for your shipment. Fill out the form and our team will respond promptly.</p>
+    <h1> Track Your Shipment</h1>
+    <p>Get a fast and accurate tracking for your shipment. Fill out the form and our team will respond promptly.</p>
   </div>
 </section>
 
 
 <section class="quote-track-section">
   <!-- Tabs -->
-  <div class="tabs">
-    <button class="tab active" data-tab="quote"><i class="fas fa-box"></i> Request A Quote</button>
-    <button class="tab" data-tab="track"><i class="fas fa-globe"></i> Track & Trace</button>
-  </div>
-
-  <!-- ===================== QUOTE TAB ===================== -->
-  <div class="tab-content active" id="quote">
-    <div class="form-container">
-      <form>
-        <h3>Personal Data</h3>
-        <div class="form-row">
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <input type="tel" placeholder="Phone">
-        </div>
-
-        <h3>Shipment Data</h3>
-        <div class="form-row">
-          <select required>
-            <option value="">Freight Type</option>
-            <option>Air Freight</option>
-            <option>Sea Freight</option>
-            <option>Road Transport</option>
-          </select>
-          <input type="text" placeholder="City of Departure" required>
-          <input type="text" placeholder="Delivery City" required>
-        </div>
-
-        <div class="form-row">
-          <select required>
-            <option value="">Incoterms</option>
-            <option>EXW</option>
-            <option>FOB</option>
-            <option>CIF</option>
-          </select>
-          <input type="number" placeholder="Weight (kg)">
-          <input type="number" placeholder="Height (cm)">
-          <input type="number" placeholder="Width (cm)">
-          <input type="number" placeholder="Length (cm)">
-        </div>
-
-        <div class="form-row radio-group">
-          <label><input type="radio" name="quote-options"> Fragile</label>
-          <label><input type="radio" name="quote-options"> Express Delivery</label>
-          <label><input type="radio" name="quote-options"> Insurance</label>
-          <label><input type="radio" name="quote-options"> Packaging</label>
-        </div>
-
-        <button type="submit" class="submit-btn">Request A Quote</button>
-      </form>
-    </div>
-
-    <!-- Help Widget -->
-    <aside class="help-widget">
-      <h3>How Can We Help You!</h3>
-      <p>We understand the importance approaching each work integrally and believe in the power of simple and easy communication.</p>
-      <a href="#" class="contact-btn"><i class="fas fa-envelope"></i> Contact Us</a>
-    </aside>
+  <div class="tabs" style="display:flex; gap:12px; margin-bottom:24px;">
+    <button class="tab active" data-tab="track" style="padding:15px 20px; border:none;  background:#33C710; color:#fff; cursor:pointer;">
+      <i class="fas fa-globe"></i> Track & Trace
+    </button>
   </div>
 
   <!-- ===================== TRACK TAB ===================== -->
-  <div class="tab-content" id="track">
+  <div class="tab-content active" id="track">
     <div class="form-container">
-      <form>
-        <h3>Tracking Details</h3>
-        <div class="form-row">
-          <input type="text" placeholder="Tracking Number" required>
-          <input type="text" placeholder="Additional Tracking Number">
-        </div>
-
-        <h3>Shipment Info</h3>
-        <div class="form-row">
-          <select required>
-            <option value="">Service Type</option>
-            <option>Ocean Freight</option>
-            <option>Air Freight</option>
-            <option>Road Transport</option>
-          </select>
-          <input type="text" placeholder="Origin City">
-          <input type="text" placeholder="Destination City">
-        </div>
-
-        <div class="form-row radio-group">
-          <label><input type="radio" name="track-options"> Fragile</label>
-          <label><input type="radio" name="track-options"> Express Delivery</label>
-          <label><input type="radio" name="track-options"> Insurance</label>
-        </div>
-
-        <button type="submit" class="submit-btn">Track Shipment</button>
-      </form>
+      <div class="wrap" style="max-width:600px; margin:0 auto; background:#fff; padding:24px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.06);">
+        <h1 style="margin-top:0;">Track Your Shipment</h1>
+        <p>Enter your tracking number and click Track.</p>
+        <form id="trackForm" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+          <input id="tracking_id" name="tracking_id" type="text" placeholder="e.g. ABC123" required
+                 style="flex:1; padding:12px; border:1px solid #ddd; border-radius:8px; min-width:150px;" />
+          <button type="submit" style="padding:12px 20px; border:none; border-radius:8px; background:#33C710; color:#fff; cursor:pointer;">
+            Track
+          </button>
+        </form>
+        <div id="output" style="margin-top:20px; font-weight:500; color:#333;"></div>
+        <p class="small meta" style="font-size:12px; color:#555; margin-top:12px;">
+          Tip: Try sample IDs like <b>ABC123</b> or <b>XYZ789</b> after you import the sample data.
+        </p>
+      </div>
     </div>
 
     <!-- Help Widget -->
-    <aside class="help-widget">
-      <h3>Need Help Tracking?</h3>
+    <aside class="help-widget" style="max-width:600px; margin:24px auto 0; padding:20px; background:#33C710; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,.05);">
+      <h3 style="margin-top:0;">Need Help Tracking?</h3>
       <p>Contact our support team if you’re having trouble locating your shipment.</p>
-      <a href="#" class="contact-btn"><i class="fas fa-envelope"></i> Contact Us</a>
+      <a href="mailto:info@lnlcambodia.com" class="contact-btn" style="display:inline-block; margin-top:10px; padding:10px 20px; background:#333; color:#fff; text-decoration:none;">
+        <i class="fas fa-envelope"></i> Contact Us
+      </a>
     </aside>
   </div>
 </section>
+
+
+
+
 <!-- ========================Footer========================== -->
 <footer id="footer" class="footer">
   <div class="footer-top">
@@ -388,6 +328,53 @@
     </div>
   </div>
 </footer>
+  <script>
+    const form = document.getElementById('trackForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      output.innerHTML = '';
+      const id = document.getElementById('tracking_id').value.trim();
+      if (!id) return;
+
+      const body = new URLSearchParams();
+      body.append('tracking_id', id);
+
+      try {
+        const res = await fetch('api.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body
+        });
+
+        const data = await res.json();
+
+        if (!data || data.status === "Not Found" || data.error) {
+          throw new Error(data.error || 'Tracking number not found');
+        }
+
+        const d = data; // assuming api.php returns full shipment info now
+        output.innerHTML = `
+          <div class="result">
+            <h3>Status: ${d.status}</h3>
+            <div class="row">
+              <div class="col"><b>Tracking #</b><br>${d.tracking_number}</div>
+              <div class="col"><b>Origin</b><br>${d.origin || '-'}</div>
+              <div class="col"><b>Destination</b><br>${d.destination || '-'}</div>
+            </div>
+            <div class="row" style="margin-top:12px;">
+              <div class="col"><b>ETA</b><br>${d.eta || '-'}</div>
+              <div class="col"><b>Last Update</b><br>${d.last_update || '-'}</div>
+            </div>
+            ${d.notes ? `<p class="meta"><b>Notes:</b> ${d.notes}</p>` : ''}
+          </div>
+        `;
+      } catch (err) {
+        output.innerHTML = `<div class="error">⚠️ ${err.message}</div>`;
+      }
+    });
+  </script>
   <script src="js/req.js"></script>
   <script src="js/main.js"></script>
   <script>
